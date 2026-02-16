@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing URL Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="shield-icon">🛡️</span>
+                <h1>Phishing URL Detector</h1>
+            </div>
+            <p class="subtitle">Stay safe online by checking URLs before you click</p>
+        </header>
+
+        <main class="main-content">
+            <form id="scanForm" class="search-form">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="Enter URL to scan... (e.g., https://example.com)"
+                        class="url-input"
+                        required
+                    />
+                    <button type="submit" class="scan-button" id="scanButton">
+                        <span id="buttonText">🔍 Scan URL</span>
+                    </button>
+                </div>
+            </form>
+
+            <div id="error" class="error-message" style="display: none;"></div>
+
+            <div id="result" class="result-card" style="display: none;">
+                <div class="result-header">
+                    <div class="result-icon" id="resultIcon"></div>
+                    <div class="result-title">
+                        <h2 id="resultTitle"></h2>
+                        <p class="result-url" id="resultUrl"></p>
+                    </div>
+                </div>
+                <div class="result-details">
+                    <div class="probability-meter">
+                        <span class="probability-label">Risk Level:</span>
+                        <div class="probability-bar">
+                            <div class="probability-fill" id="probabilityFill"></div>
+                        </div>
+                        <span class="probability-value" id="probabilityValue"></span>
+                    </div>
+                </div>
+            </div>
+
+            <section id="historySection" class="history-section" style="display: none;">
+                <div class="history-header">
+                    <h2>📜 Scan History</h2>
+                    <button id="clearHistory" class="clear-button">🗑️ Clear</button>
+                </div>
+                <div class="history-list" id="historyList"></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>© 2024 Phishing Detector • Protect yourself online</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
